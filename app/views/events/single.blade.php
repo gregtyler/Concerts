@@ -1,5 +1,7 @@
 ﻿@extends('layouts.main')
 
+@section('title', $occurrence->event->title)
+
 @section('content')
 <div class=container>
     <h1 class=page-header>{{$occurrence->event->title}}</h1>

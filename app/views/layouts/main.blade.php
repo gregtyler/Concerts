@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-    <title>Concerts</title>
+    <title>@if (trim($__env->yieldContent('title'))) @yield('title') -@endif Bartok</title>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700|Merriweather:400,700' rel='stylesheet' type='text/css'>
     <link rel=stylesheet href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <link rel=stylesheet href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">

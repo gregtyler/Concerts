@@ -1,5 +1,7 @@
 @extends('layouts.main')
 
+@section('title',$venue->name)
+
 @section('content')
 <div class=container>
     <h1 class=page-header>{{$venue->name}}</h1>

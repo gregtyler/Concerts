@@ -1,5 +1,7 @@
 @extends('layouts.main')
 
+@section('title','Events in Bristol this week')
+
 @section('content')
 <section class="col-sm-9">
     <h1 class="page-header hottext">
