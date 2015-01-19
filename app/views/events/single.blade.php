@@ -39,13 +39,13 @@
         {? $upcoming = count( $occurrence->upcoming ) ?}
         @if( $upcoming )
         <div class="event-meta-item event-meta-item-big">
-            <a href=#>{{ Lang::choice('events.upcoming_performance_notice', $upcoming ) }}</a>
+            <a href={{ $occurrence->event->link }}>{{ Lang::choice('events.upcoming_performance_notice', $upcoming ) }}</a>
         </div>
         @endif
     </div>
     <div class=event-description>
         {{nl2br($occurrence->event->description)}}
-    </div>    
+    </div>
 </div>
 <div class=container>
     <h3>More like this</h3>

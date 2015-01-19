@@ -18,6 +18,18 @@ class Event extends \Eloquent {
     }
     
     /** PROPERTIES **/
+    public function getLinkAttribute() {
+        return action('EventController@showAbstract', array('id'=>$this->id));
+    }
+    
+    public function getUpcomingAttribute() {
+        $upcoming = \EventOccurrence
+            ::where('event_id', '=', $this->id)
+            ->where('start', '>', time())
+            ->get();
+        return $upcoming;
+    }
+    
     public function getSimilarAttribute() {
         $tagIDs = array();
         // Fetch the IDs of tags this is attached to

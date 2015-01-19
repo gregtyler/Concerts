@@ -1,7 +1,8 @@
-<!doctype html>
+﻿<!doctype html>
 <html>
 <head>
-    <title>@if (trim($__env->yieldContent('title'))) @yield('title') -@endif Bartok</title>
+    <meta charset="utf-8" />
+    <title>@if (trim($__env->yieldContent('title'))) @yield('title') -@endif Bart&oacute;k</title>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700|Merriweather:400,700' rel='stylesheet' type='text/css'>
     <link rel=stylesheet href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <link rel=stylesheet href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
@@ -18,13 +19,14 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#"><i class="fa fa-music"></i></a>
+      <a class="navbar-brand" href="{{ action('BaseController@showHome') }}"><i class="fa fa-music"></i></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li @if( Route::currentRouteAction() === 'EventController@showList' ) class="active"@endif><a href="{{ action('EventController@showList') }}">This week <span class="sr-only">(current)</span></a></li>
+        {? $current = in_array( Route::currentRouteAction(), array( 'EventController@showList', 'EventController@showFind' ) ) ?}
+        <li @if( $current ) class="active"@endif><a href="{{ action('EventController@showFind') }}">Event listings @if( $current ) <span class="sr-only">(current)</span>@endif</a></li>
       </ul>
       <form class="navbar-form navbar-right" role="search">
         <div class="input-group">
@@ -35,8 +37,8 @@
         </div>
       </form>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">About</a></li>
-        <li><a href="#">Add your event</a></li>
+        <li><a href="{{ action('BaseController@showAbout') }}">About</a></li>
+        <li><a href="{{ action('AdminController@showAdd') }}">Add your event</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
