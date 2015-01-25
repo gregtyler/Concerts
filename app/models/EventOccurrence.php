@@ -7,13 +7,9 @@ class EventOccurrence extends Eloquent {
         return $this->belongsTo('DB\Event');
     }
     
-    public function venue() {
-        return $this->venue_id ? $this->belongsTo('Venue') : $this->event->venue();
-    }
-    
     /** PROPERTIES **/
     public function getLinkAttribute() {
-        return action('EventController@showSingle', array('id'=>$this->id));
+        return action('EventController@showPerformance', array('id'=>$this->id));
     }
     
     public function getUpcomingAttribute() {

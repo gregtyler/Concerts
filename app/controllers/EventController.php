@@ -66,9 +66,9 @@ class EventController extends BaseController {
         ));
     }
     
-    public function showSingle($id) {
+    public function showPerformance($id) {
         $occurrence = EventOccurrence::find( $id );
-        return View::make('events.single', array('occurrence'=>$occurrence));
+        return View::make('events.performance', array('occurrence'=>$occurrence));
     }
     
    /**
@@ -92,9 +92,9 @@ class EventController extends BaseController {
    /**
     * Show an abstract for a run of events
     */
-    public function showAbstract( $id ) {
+    public function showSingle( $id ) {
         $abstract = DB\Event::where('id','=',$id)->first();
-        return View::make('events.abstract', array('abstract'=>$abstract));
+        return View::make('events.single', array('abstract'=>$abstract));
     }
 
 }

@@ -17,7 +17,7 @@ App::missing(function($exception) {
 
 // Individual index pages
 Route::get('/e/{id}', 'EventController@showSingle')->where('id', '[0-9]+');
-Route::get('/e/abstract/{id}', 'EventController@showAbstract')->where('id', '[0-9]+');
+Route::get('/e/performance/{id}', 'EventController@showPerformance')->where('id', '[0-9]+');
 Route::get('/venue/{id}', 'VenueController@showSingle')->where('id', '[0-9]+');
 Route::get('/tag/{type}:{slug}', 'TagController@showSingle')->where(array(
     'type' => '[a-z]+',

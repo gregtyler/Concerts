@@ -116,6 +116,44 @@ h1, h2, h3, h4, h5, h6 { font-family: Merriweather; }
     .stream-tags { display: none; }
 }
 
+/** CALENDARS **/
+.calendar {
+    table-layout: fixed;
+    border: 1px solid #DDD;
+    & > caption {
+        background-color: hsl(180, 25%, 50%);
+        color: #FFF;
+        font-weight: bold;
+        text-align: center;
+    }
+    & th, & td { text-align: center; cursor: default; }
+}
+// Outside the current month
+.calendar-outlier {
+    color: #AAA;
+}
+// Event markers
+.calendar-event {
+    background-color: teal;
+    color: #FFF;
+    font-weight: bold;
+    &.calendar-outlier { color: #AAA; font-weight: normal; }
+}
+// Today marker
+.calendar-today {
+    position: relative;
+    &::after {
+        content: '';
+        border: .5em solid gold;
+        border-color: gold gold transparent transparent;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 0;
+        height: 0;
+    }
+}
+
 /** HOTTEXT **/
 .hottext-phrase {
     padding: 3px 5px;
@@ -190,7 +228,7 @@ h1, h2, h3, h4, h5, h6 { font-family: Merriweather; }
         }
         & > a {
             display: block;
-            padding: 1em;
+            padding: .7em;
             color: inherit;
             text-decoration: none;
             &:hover {
@@ -198,5 +236,15 @@ h1, h2, h3, h4, h5, h6 { font-family: Merriweather; }
                 color: #FFF;
             }
         }
+    }
+}
+
+/** A fix for using btn-group as a tab bar **/
+.btn-group-tabs {
+    & > li { padding: 0; }
+    & > li > a {
+        display: inline-block;
+        padding: 6px 12px;
+        color: inherit;
     }
 }

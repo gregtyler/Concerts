@@ -7,7 +7,7 @@
             <ul class=stream-meta>
                 <li><i class="fa fa-calendar"></i> {{date('l jS', $occurrence->start)}}
                 <li><i class="fa fa-clock-o"></i> {{date('H:i A', $occurrence->start)}}
-                <li><i class="fa fa-map-marker"></i> <a href="{{$occurrence->venue->link}}">{{$occurrence->venue->name}}</a>, {{$occurrence->venue->area->label}}
+                <li><i class="fa fa-map-marker"></i> <a href="{{$occurrence->event->venue->link}}">{{$occurrence->event->venue->name}}</a>, {{$occurrence->event->venue->area->label}}
             </ul>
             <p class=stream-desc>{{nl2br($occurrence->event->stinger)}}</p>
             <ul class=stream-tags>

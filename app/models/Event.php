@@ -19,7 +19,7 @@ class Event extends \Eloquent {
     
     /** PROPERTIES **/
     public function getLinkAttribute() {
-        return action('EventController@showAbstract', array('id'=>$this->id));
+        return action('EventController@showSingle', array('id'=>$this->id));
     }
     
     public function getUpcomingAttribute() {

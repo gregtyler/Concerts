@@ -29,10 +29,11 @@
         <li @if( $current ) class="active"@endif><a href="{{ action('EventController@showFind') }}">Event listings @if( $current ) <span class="sr-only">(current)</span>@endif</a></li>
       </ul>
       <form class="navbar-form navbar-right" role="search">
+        <label class=sr-only for=search-box>Search</label>
         <div class="input-group">
-          <input type="text" class="form-control" placeholder="Search">
+          <input id=search-box type="text" class="form-control" placeholder="Search">
           <span class="input-group-btn">
-            <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+            <button type="submit" class="btn btn-default"><i class="fa fa-search" style="line-height:inherit;"></i></button>
           </span>
         </div>
       </form>
@@ -46,5 +47,7 @@
 <main class="container-fluid">
     @yield('content')
 </main>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 </body>
 </html>
